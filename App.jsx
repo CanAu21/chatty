@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack"; // Değişiklik burada, @react-navigation/stack kullanıyoruz
 import Chats from "./screens/Chats";
 import Settings from "./screens/Settings";
+import SignUp from "./screens/SignUp";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "./config/constants";
 
@@ -59,8 +60,9 @@ const MainStack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <MainStack.Navigator headerMode="none">
+      <MainStack.Navigator headerMode="none" mode="modal">
         <MainStack.Screen name="Tabs" component={TabsScreen} />
+        <MainStack.Screen name="SignUp" component={SignUp} />
       </MainStack.Navigator>
     </NavigationContainer>
   );

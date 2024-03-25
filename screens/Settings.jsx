@@ -1,9 +1,8 @@
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet } from "react-native";
 import React from "react";
 import Contact from "../components/Contact";
 import { colors } from "../config/constants";
 import Seperator from "../components/Seperator";
-import { Ionicons } from "@expo/vector-icons";
 import Cell from "../components/Cell";
 
 const Settings = () => {
@@ -15,7 +14,25 @@ const Settings = () => {
         style={styles.contactRow}
       />
       <Seperator />
-      <Cell />
+      <Cell
+        onPress={() => alert("dont touch me")}
+        title="Log Out"
+        icon="log-out-outline"
+        tintColor={colors.red}
+      />
+      <Cell
+        onPress={() => alert("dont touch me")}
+        style={{ marginTop: 20 }}
+        title="Help"
+        icon="information-outline"
+        tintColor={colors.green}
+      />
+      <Cell
+        onPress={() => alert("dont touch me")}
+        title="Tell a Friend"
+        icon="heart-outline"
+        tintColor={colors.pink}
+      />
     </View>
   );
 };
@@ -26,28 +43,6 @@ const styles = StyleSheet.create({
     marginTop: 16,
     borderTopWidth: StyleSheet.hairlineWidth,
     borderColor: colors.border,
-  },
-  cell: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    backgroundColor: "white",
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.border,
-  },
-  iconContainer: {
-    width: 32,
-    height: 32,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 6,
-    backgroundColor: colors.red,
-  },
-  title: {
-    fontSize: 16,
-    marginStart: 16,
-    flex: 1,
   },
 });
 

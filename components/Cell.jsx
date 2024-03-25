@@ -3,13 +3,13 @@ import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../config/constants";
 
-const Cell = () => {
+const Cell = ({ title, icon, tintColor, onPress, style }) => {
   return (
-    <TouchableOpacity style={styles.cell} onPress={() => [alert("Hey")]}>
-      <View style={styles.iconContainer}>
-        <Ionicons name="log-out-outline" size={24} color={"white"} />
+    <TouchableOpacity style={[styles.cell, style]} onPress={onPress}>
+      <View style={[styles.iconContainer, { backgroundColor: tintColor }]}>
+        <Ionicons name={icon} size={24} color={"white"} />
       </View>
-      <Text style={styles.title}>Log Out</Text>
+      <Text style={styles.title}>{title}</Text>
       <Ionicons name="chevron-forward-outline" size={20} />
     </TouchableOpacity>
   );
@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 6,
-    backgroundColor: colors.red,
   },
   title: {
     fontSize: 16,
