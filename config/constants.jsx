@@ -1,0 +1,5 @@
+export const colors = {
+  primary: "#2196f3",
+  border: "#E2E2E2",
+  red: "#f44336",
+};
